@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- Shield with a phone-shaped cutout: authorized, protected service. Filled shapes only. -->
+  <path fill="#FFFFFF" fill-rule="evenodd" d="
+    M512,188 C604,242 694,258 782,258 V500 C782,666 668,776 512,840 C356,776 242,666 242,500 V258 C330,258 420,242 512,188 Z
+    M452,318 H572 A44,44 0 0 1 616,362 V632 A44,44 0 0 1 572,676 H452 A44,44 0 0 1 408,632 V362 A44,44 0 0 1 452,318 Z"/>
+  <!-- Speaker slot inside the phone cutout -->
+  <rect fill="#FFFFFF" x="482" y="346" width="60" height="22" rx="11"/>
+</svg>

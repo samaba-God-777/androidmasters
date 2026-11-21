@@ -1,0 +1,40 @@
+[package]
+name = "androidmasters"
+version = "1.0.0"
+description = "AndroidMasters — diagnóstico y gestión autorizada de dispositivos Android"
+edition = "2021"
+rust-version = "1.80"
+
+[lib]
+name = "androidmasters_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+rusqlite = { version = "0.43", features = ["bundled", "backup"] }
+chrono = { version = "0.4", features = ["serde"] }
+argon2 = "0.5"
+chacha20poly1305 = "0.10"
+hmac = "0.12"
+sha2 = "0.10"
+rand = "0.8"
+base64 = "0.22"
+hex = "0.4"
+regex = "1"
+log = "0.4"
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true

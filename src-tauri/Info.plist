@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <!-- Spanish as the app's language, so macOS-provided menu items and dialogs are shown in Spanish. -->
+  <key>CFBundleDevelopmentRegion</key>
+  <string>es</string>
+  <key>CFBundleLocalizations</key>
+  <array>
+    <string>es</string>
+  </array>
+  <!-- Liquid Glass icon (Assets.car from Icon/AppIcon.icon, compiled by tools/make_icon.sh); icon.icns is the fallback. -->
+  <key>CFBundleIconName</key>
+  <string>AppIcon</string>
+</dict>
+</plist>

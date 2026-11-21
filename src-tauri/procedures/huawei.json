@@ -1,0 +1,108 @@
+{
+  "brand": "huawei",
+  "name": "Huawei / HUAWEI ID",
+  "aliases": [
+    "huawei",
+    "honor"
+  ],
+  "updated": "2026-11-21",
+  "support_links": [
+    {
+      "label": "HUAWEI Cloud",
+      "url": "https://cloud.huawei.com"
+    },
+    {
+      "label": "Soporte Huawei",
+      "url": "https://consumer.huawei.com"
+    }
+  ],
+  "procedures": [
+    {
+      "id": "huawei-google-remove",
+      "kind": "account_removal",
+      "service": "Cuenta Google",
+      "title": "Quitar la cuenta Google del teléfono (si el equipo tiene servicios de Google)",
+      "version": 1,
+      "android_min": 8,
+      "summary": "El propietario la quita desde Ajustes antes de restablecer o entregar el equipo, para que la protección FRP no la pida después.",
+      "steps": [
+        "El propietario desbloquea el teléfono con su propio bloqueo de pantalla.",
+        "Abre Ajustes y busca «Cuentas» (según la versión: Ajustes › Contraseñas y cuentas, Ajustes › Cuentas o Ajustes › Usuarios y cuentas).",
+        "Toca la cuenta Google y elige «Quitar cuenta». Si el teléfono lo pide, confirma con el bloqueo de pantalla.",
+        "Repite con cada cuenta Google que aparezca."
+      ],
+      "verification": [
+        "Con el teléfono conectado: «Comprobar cuentas en el equipo» debe mostrar 0 cuentas Google.",
+        "O bien: la pantalla de cuentas del teléfono ya no muestra ninguna cuenta Google."
+      ],
+      "links": [
+        {
+          "label": "Google: añadir o quitar una cuenta en Android",
+          "url": "https://support.google.com/android/answer/7664951"
+        }
+      ],
+      "notes": [
+        "El técnico nunca pide, escribe ni guarda la contraseña del propietario."
+      ]
+    },
+    {
+      "id": "huawei-id-remove",
+      "kind": "account_removal",
+      "service": "HUAWEI ID",
+      "title": "Desactivar «Buscar mi dispositivo» y cerrar sesión en HUAWEI ID",
+      "version": 1,
+      "summary": "Con «Buscar mi dispositivo» activo, el equipo queda bloqueado al HUAWEI ID tras restablecerlo.",
+      "steps": [
+        "El propietario desbloquea el teléfono.",
+        "Abre Ajustes y toca su nombre (HUAWEI ID) en la parte superior.",
+        "Desactiva «Buscar mi dispositivo» (pide la contraseña) y después elige «Cerrar sesión».",
+        "Si el equipo no está disponible, el propietario puede gestionar sus dispositivos desde HUAWEI Cloud."
+      ],
+      "verification": [
+        "«Comprobar cuentas en el equipo» ya no muestra la cuenta HUAWEI ID."
+      ],
+      "links": [
+        {
+          "label": "HUAWEI Cloud",
+          "url": "https://cloud.huawei.com"
+        },
+        {
+          "label": "Soporte Huawei",
+          "url": "https://consumer.huawei.com"
+        }
+      ],
+      "notes": [
+        "En equipos Honor el procedimiento es equivalente con HONOR ID."
+      ]
+    },
+    {
+      "id": "huawei-transfer",
+      "kind": "transfer",
+      "service": "Transferencia",
+      "title": "Preparar el equipo para un nuevo propietario",
+      "version": 1,
+      "summary": "Lista para entregar o revender el equipo sin cuentas ni protecciones del propietario anterior.",
+      "steps": [
+        "Autorización del propietario registrada.",
+        "El propietario hace la copia de seguridad que quiera conservar y confirma que la sincronización terminó.",
+        "El propietario quita todas las cuentas Google desde Ajustes.",
+        "El propietario desactiva «Buscar mi dispositivo» y cierra sesión en HUAWEI ID.",
+        "Retirar la tarjeta SIM y, si la hay, que el propietario elimine la eSIM desde Ajustes.",
+        "Desvincular relojes y accesorios asociados.",
+        "Comprobar con «Comprobar cuentas en el equipo» que no queda ninguna cuenta con protección.",
+        "Restablecer con confirmación explícita (módulo Restablecimiento).",
+        "Verificar que el asistente de configuración no pide ninguna cuenta anterior."
+      ],
+      "verification": [
+        "El asistente de configuración no pide ninguna cuenta anterior."
+      ],
+      "links": [
+        {
+          "label": "Google: restablecer un dispositivo Android",
+          "url": "https://support.google.com/android/answer/6088915"
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

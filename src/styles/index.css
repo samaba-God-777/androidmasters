@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-950: #0b0f14;
+  --color-ink-925: #0e131a;
+  --color-ink-900: #11171e;
+  --color-ink-850: #161d26;
+  --color-ink-800: #1c2530;
+  --color-ink-750: #222c39;
+  --color-ink-700: #2a3644;
+  --color-ink-600: #3a4757;
+  --color-ink-500: #5d6b7c;
+  --color-ink-400: #8392a3;
+  --color-ink-300: #a9b5c2;
+  --color-ink-200: #cdd6df;
+  --color-ink-100: #e8edf2;
+  --color-brand-300: #5eead4;
+  --color-brand-400: #2dd4bf;
+  --color-brand-500: #14b8a6;
+  --color-brand-600: #0d9488;
+  --color-brand-700: #0f766e;
+  --color-ok: #4ade80;
+  --color-warn: #fbbf24;
+  --color-danger: #f87171;
+  --color-info: #60a5fa;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--color-ink-950);
+  color: var(--color-ink-100);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  -webkit-user-select: none;
+}
+input, textarea, select, [data-selectable] { user-select: text; -webkit-user-select: text; }
+:focus-visible { outline: 2px solid var(--color-brand-400); outline-offset: 2px; border-radius: 6px; }
+::selection { background: color-mix(in srgb, var(--color-brand-500) 40%, transparent); }
+* { scrollbar-width: thin; scrollbar-color: var(--color-ink-700) transparent; }
+
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* Press feedback: buttons acknowledge the click immediately. */
+.pressable { transition: transform 160ms var(--ease-out), background-color 150ms ease, border-color 150ms ease, color 150ms ease; }
+.pressable:active:not(:disabled) { transform: scale(0.97); }
+
+/* Native <dialog>: modals scale from center, entry slower than exit. */
+dialog.am-dialog {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out), overlay 200ms allow-discrete, display 200ms allow-discrete;
+}
+dialog.am-dialog:not([open]) { opacity: 0; transform: scale(0.96); transition-duration: 120ms; }
+@starting-style { dialog.am-dialog[open] { opacity: 0; transform: scale(0.96); } }
+dialog.am-dialog::backdrop { background: rgb(5 8 12 / 0.65); transition: background-color 200ms ease, overlay 200ms allow-discrete, display 200ms allow-discrete; }
+@starting-style { dialog.am-dialog[open]::backdrop { background: rgb(5 8 12 / 0); } }
+
+/* Toasts enter from and leave toward the same edge. */
+.am-toast { transition: opacity 220ms var(--ease-out), transform 220ms var(--ease-out); }
+@starting-style { .am-toast { opacity: 0; transform: translateY(8px); } }
+.am-toast[data-leaving] { opacity: 0; transform: translateY(8px); transition-duration: 150ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pressable:active:not(:disabled) { transform: none; }
+  dialog.am-dialog, dialog.am-dialog:not([open]), .am-toast, .am-toast[data-leaving] { transform: none; }
+}
